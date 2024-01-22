@@ -1,10 +1,11 @@
 #frequently-asked-questions .collapsible {
-    margin-bottom: 20px; /* increased separation between items */
-    padding: 25px; /* larger blocks with more padding */
-    background-color: rgba(0, 0, 0, 0.8); /* black with transparency */
+    margin-bottom: 30px; /* increased separation between items */
+    margin-left: 20px; /* indented */
+    padding: 30px; /* larger blocks with more padding */
+    background-color: rgba(0, 0, 0, 0.702); /* black with transparency */
     color: white;
     cursor: pointer;
-    width: 100%;
+    width: 98%;
     border: none;
     text-align: left;
     outline: none;
@@ -12,9 +13,21 @@
     font-family: 'Georgia', serif; /* Georgia font */
     border-radius: 10px; /* rounded corners */
 }
+
+#frequently-asked-questions .collapsible:active {
+    background-color: #333; /* Darker shade when active */
+    color: #ddd; /* Optional: change text color when active */
+    /* Add any other style changes you want on active state */
+}
   
+#frequently-asked-questions-title {
+    margin-top: 30px; /* Adjust this value as needed */
+    margin-bottom: 30px;
+    /* Other styles for the title */
+}
+
 #frequently-asked-questions .active, .collapsible:hover {
-    background-color: #555; /* a lighter shade of black for hover/active state */
+    background-color: #13134d; /* a lighter shade of black for hover/active state */
 }
 
 #frequently-asked-questions .collapsible:after {
@@ -29,17 +42,20 @@
     content: "\2212";
 }
 
+
 #frequently-asked-questions .content {
-    padding: 0 25px;
+    padding: 0px 25px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    background-color: rgba(255, 255, 255, 0.5); /* white with transparency */
+    background-color: rgba(0, 0, 0, 0.2); /* white with transparency */
     margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: -20px;
     border-radius: 10px; /* rounded corners */
 }
 
 #frequently-asked-questions .content p {
-    padding: 20px 0;
+    padding: 20px 0;    
     font-family: 'Georgia', serif; /* Georgia font */
 }
