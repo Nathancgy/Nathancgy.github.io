@@ -18,7 +18,9 @@ body {
     left: 0;
 }
 .navbar-menu .short-label {
-    display: inline-block;
+    display: block;
+    opacity: 1; /* Fully visible */
+    transition: opacity 0.5s ease;
 }
 .navbar-menu:hover {
     width: 150px; 
@@ -70,6 +72,8 @@ body {
 .full-label {
     display: none;
     white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .navbar-menu:hover {
@@ -77,10 +81,12 @@ body {
 }
 
 .navbar-menu:hover .full-label {
+    opacity: 1; 
     display: inline; 
 }
 
 .navbar-menu:hover .short-label {
+    opacity: 0; 
     display: none; 
 }
 .cover-img {
