@@ -9,13 +9,20 @@ body {
 
 .navbar-menu {
     position: fixed;
-    width: 45px;
-    height: 45px;
-    z-index: 0;
-    left: 0;
-    top: 0;
+    width: 45px; /* Initial width */
     height: 100%;
     background: #2a2a2a;
+    transition: width 0.3s ease-in-out;
+    z-index: 1000; /* Higher z-index */
+    top: 0;
+    left: 0;
+}
+.navbar-menu .short-label {
+    display: inline-block; /* Ensure visibility */
+    /* Add any additional styling needed here */
+}
+.navbar-menu:hover {
+    width: 150px; /* Expanded width */
 }
 
 .navbar-menu span, .navbar-menu a.logo i {
@@ -27,16 +34,8 @@ body {
     text-align: center;
 }
 
-.fa {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 .navbar-menu a {
+    position: relative;
     display: block;
     padding: 10px;
     font-size: 16px;
@@ -45,15 +44,22 @@ body {
     text-align: center;
     text-shadow: 0 1px 0 black;
     text-decoration-line: none;
-}
-
-a.logo {
-	font-size: 18px;
-    color: #fff;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Ensure it's above other content */
+    overflow: hidden;
 }
 
 .navbar-menu a:hover {
 	background-color: #f49484;
+}
+
+.navbar-menu:hover + .wrapper .sidebar {
+    left: 150px; /* Match the width of the expanded navbar */
+}
+
+
+.navbar-menu:hover + .wrapper .main {
+    margin-left: calc(23% + 105px); /* Adjust to match expanded navbar */
 }
 
 .navbar-menu a:active, .navbar-menu a.active {
@@ -62,11 +68,28 @@ a.logo {
     text-shadow: 0 1px 0 #de533a;
 }
 
+.full-label {
+    display: none;
+    white-space: nowrap;
+}
+
+.navbar-menu:hover {
+    width: 150px;
+}
+
+.navbar-menu:hover .full-label {
+    display: inline; 
+}
+
+.navbar-menu:hover .short-label {
+    display: none; 
+}
 .cover-img {
     position: absolute;
     top: 0;
     left: 0;
     background-position: center;
+    
     background-size: cover;
     position: fixed;
     top: 0;
@@ -76,13 +99,30 @@ a.logo {
     width: 20%;
 }
 
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a.logo {
+	font-size: 18px;
+    color: #fff;
+}
+
+
 .sidebar {
+    z-index: 1;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 45px;
     width: 20.0%;
+    transition: left 0.3s ease-in-out;
 }
 
 .sidebar, .main {
@@ -103,6 +143,7 @@ a.logo {
 	margin-left: 23%;
     width: 61.8%;
     padding-left: 12px;
+    transition: margin-left 0.3s ease-in-out;
 }
 
 .sidebar .bottom-block {
