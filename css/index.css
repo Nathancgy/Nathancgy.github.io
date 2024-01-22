@@ -9,20 +9,19 @@ body {
 
 .navbar-menu {
     position: fixed;
-    width: 45px; /* Initial width */
+    width: 45px;
     height: 100%;
     background: #2a2a2a;
     transition: width 0.3s ease-in-out;
-    z-index: 1000; /* Higher z-index */
+    z-index: 1000;
     top: 0;
     left: 0;
 }
 .navbar-menu .short-label {
-    display: inline-block; /* Ensure visibility */
-    /* Add any additional styling needed here */
+    display: inline-block;
 }
 .navbar-menu:hover {
-    width: 150px; /* Expanded width */
+    width: 150px; 
 }
 
 .navbar-menu span, .navbar-menu a.logo i {
