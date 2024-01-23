@@ -19,11 +19,11 @@ body {
 }
 .navbar-menu .short-label {
     display: block;
-    opacity: 1; /* Fully visible */
+    opacity: 1;
     transition: opacity 0.5s ease;
 }
 .navbar-menu:hover {
-    width: 150px; 
+    width: 100px; 
 }
 
 .navbar-menu span, .navbar-menu a.logo i {
@@ -54,15 +54,6 @@ body {
 	background-color: #f49484;
 }
 
-.navbar-menu:hover + .wrapper .sidebar {
-    left: 150px; /* Match the width of the expanded navbar */
-}
-
-
-.navbar-menu:hover + .wrapper .main {
-    margin-left: calc(23% + 105px); /* Adjust to match expanded navbar */
-}
-
 .navbar-menu a:active, .navbar-menu a.active {
     background-color: #e78170;
     color: white;
@@ -74,11 +65,7 @@ body {
     white-space: nowrap;
     opacity: 0;
     transition: opacity 0.5s ease;
-}
-
-.navbar-menu:hover {
-    width: 150px;
-}
+}   
 
 .navbar-menu:hover .full-label {
     opacity: 1; 
