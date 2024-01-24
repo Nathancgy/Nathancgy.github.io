@@ -7,6 +7,14 @@ body {
     background-color: white;
 }
 
+.text-box {
+    background-color: rgba(128, 128, 128, 0.2); 
+    border-radius: 40px; 
+    padding: 20px; 
+    margin-bottom: 2px; 
+    backdrop-filter: blur(2px);
+}
+
 .navbar-menu {
     position: fixed;
     width: 45px;
