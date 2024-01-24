@@ -8,7 +8,7 @@
             }
         },
         "color": {
-            "value": "#000000"
+            "value": "#A680A6"
         },
         "shape": {
             "type": "triangle"
@@ -36,7 +36,7 @@
         "line_linked": {
             "enable": true,
             "distance": 150,
-            "color": "#000000",
+            "color": "#A680A6",
             "opacity": 0.4,
             "width": 1
         },
