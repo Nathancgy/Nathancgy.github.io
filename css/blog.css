@@ -134,3 +134,11 @@ blockquote {
     margin: 0 20px; /* Adjust spacing between dots as needed */
     display: inline-block;
   }
+
+  h2 {
+	font-family: Arial, sans-serif; /* This font looks similar to the one in the image */
+	font-size: 26px; /* Adjust to match the size in the image */
+	font-weight: bold; /* To match the bold style */
+	text-align: left; /* Aligns text to the left */
+  }
+  
