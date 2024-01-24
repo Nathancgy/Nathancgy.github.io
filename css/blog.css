@@ -105,8 +105,8 @@
 }
 
 blockquote {
-	font-family: 'Times New Roman', Times, serif; /* or any other font */
-	font-size: 24px; /* adjust as necessary */
+	font-family: 'Georgia', Georgia, serif; /* or any other font */
+	font-size: 20px; /* adjust as necessary */
 	font-style: italic;
 	margin: 0px auto; /* centers the blockquote and adds space around it */
 	max-width: 800px; /* maximum width of the quote block */
@@ -142,3 +142,8 @@ blockquote {
 	text-align: left; /* Aligns text to the left */
   }
   
+.indented-paragraph {
+    text-indent: 25px;
+    font-family: Georgia, serif;
+    margin-bottom: 10px; /* Adds space between paragraphs, adjust as needed */
+}
