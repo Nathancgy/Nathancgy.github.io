@@ -22,9 +22,6 @@ body {
     opacity: 1;
     transition: opacity 0.5s ease;
 }
-.navbar-menu:hover {
-    width: 100px; 
-}
 
 .navbar-menu span, .navbar-menu a.logo i {
     display: none;
@@ -67,15 +64,22 @@ body {
     transition: opacity 0.5s ease;
 }   
 
-.navbar-menu:hover .full-label {
-    opacity: 1; 
-    display: inline; 
+@media (hover: hover) and (pointer: fine) {
+    .navbar-menu:hover {
+        width: 100px; 
+    }
+  
+    .navbar-menu:hover .full-label {
+        opacity: 1; 
+        display: inline; 
+    }
+  
+    .navbar-menu:hover .short-label {
+        opacity: 0; 
+        display: none; 
+    }
 }
 
-.navbar-menu:hover .short-label {
-    opacity: 0; 
-    display: none; 
-}
 .cover-img {
     position: absolute;
     top: 0;
