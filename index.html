@@ -16,6 +16,7 @@
     <script src="./js/mobile-compatibility.js"></script>
 </head>
 <body>
+	<div id="particles-js"></div>
 	<div class="navbar-menu">
 		<a class="logo active" data-target="#nav-menu" title="HomePage: About Me" href="index.html">
 			<span class="short-label"><b>H</b></span>
@@ -109,44 +110,51 @@
 				<br>
 			</div>
 		</div>
-</div>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var navbarMenu = document.querySelector('.navbar-menu');
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var navbarMenu = document.querySelector('.navbar-menu');
 
-        function setNavbarState(expanded) {
-            if (expanded) {
-                navbarMenu.classList.add('expanded');
-                sessionStorage.setItem('navbarExpanded', 'true');
-            } else {
-                navbarMenu.classList.remove('expanded');
-                sessionStorage.setItem('navbarExpanded', 'false');
-            }
-        }
+			function setNavbarState(expanded) {
+				if (expanded) {
+					navbarMenu.classList.add('expanded');
+					sessionStorage.setItem('navbarExpanded', 'true');
+				} else {
+					navbarMenu.classList.remove('expanded');
+					sessionStorage.setItem('navbarExpanded', 'false');
+				}
+			}
 
-        navbarMenu.addEventListener('mouseenter', function() {
-            setNavbarState(true);
-        });
+			navbarMenu.addEventListener('mouseenter', function() {
+				setNavbarState(true);
+			});
 
-        navbarMenu.addEventListener('mouseleave', function() {
-            setNavbarState(false);
-        });
+			navbarMenu.addEventListener('mouseleave', function() {
+				setNavbarState(false);
+			});
 
-        var navbarLinks = navbarMenu.querySelectorAll('a');
-        navbarLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                setNavbarState(false);
-            });
-        });
+			var navbarLinks = navbarMenu.querySelectorAll('a');
+			navbarLinks.forEach(function(link) {
+				link.addEventListener('click', function() {
+					setNavbarState(false);
+				});
+			});
 
-        // Initialize navbar state on page load
-        if (sessionStorage.getItem('navbarExpanded') === 'true') {
-            setNavbarState(true);
-        } else {
-            setNavbarState(false);
-        }
-    });
-</script>
+			// Initialize navbar state on page load
+			if (sessionStorage.getItem('navbarExpanded') === 'true') {
+				setNavbarState(true);
+			} else {
+				setNavbarState(false);
+			}
+		});
+	</script>
+
+	<script src="/js/particles.js"></script>
+	<script>
+		particlesJS.load('particles-js', '/js/particlesjs-config.json', function() {
+			console.log('particles.js loaded - callback');
+		});
+	</script>
 
 </body>
 </html>

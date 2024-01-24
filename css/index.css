@@ -291,3 +291,13 @@ a {
     width: 30px; 
     height: 30px;
 }
+
+#particles-js {
+    position: fixed; /* Use fixed instead of absolute to cover the entire page */
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* This will be covered by particles, but it's good to have a fallback */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Behind everything else */
+}
