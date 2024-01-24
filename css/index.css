@@ -280,3 +280,14 @@ a {
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
+.main-container img {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.main-container a.github-icon img {
+    border-radius: 50%;
+    width: 30px; 
+    height: 30px;
+}
