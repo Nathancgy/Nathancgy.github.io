@@ -113,43 +113,40 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var navbarMenu = document.querySelector('.navbar-menu');
-        
-        function collapseNavbar() {
-            navbarMenu.style.width = '45px';
-            document.querySelectorAll('.navbar-menu .full-label').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.navbar-menu .short-label').forEach(el => el.style.display = 'block');
-        }
 
-        function expandNavbar() {
-            navbarMenu.style.width = '100px';
-            document.querySelectorAll('.navbar-menu .full-label').forEach(el => el.style.display = 'inline');
-            document.querySelectorAll('.navbar-menu .short-label').forEach(el => el.style.display = 'none');
+        function setNavbarState(expanded) {
+            if (expanded) {
+                navbarMenu.classList.add('expanded');
+                sessionStorage.setItem('navbarExpanded', 'true');
+            } else {
+                navbarMenu.classList.remove('expanded');
+                sessionStorage.setItem('navbarExpanded', 'false');
+            }
         }
 
         navbarMenu.addEventListener('mouseenter', function() {
-            expandNavbar();
+            setNavbarState(true);
         });
 
         navbarMenu.addEventListener('mouseleave', function() {
-            collapseNavbar();
+            setNavbarState(false);
         });
 
         var navbarLinks = navbarMenu.querySelectorAll('a');
         navbarLinks.forEach(function(link) {
             link.addEventListener('click', function() {
-                collapseNavbar();
-                sessionStorage.setItem('expandNavbar', 'false');
+                setNavbarState(false);
             });
         });
 
-        // Collapse the navbar on page load
-        collapseNavbar();
-
-        // Remove the session storage item on page refresh to ensure navbar starts collapsed
-        sessionStorage.removeItem('expandNavbar');
+        // Initialize navbar state on page load
+        if (sessionStorage.getItem('navbarExpanded') === 'true') {
+            setNavbarState(true);
+        } else {
+            setNavbarState(false);
+        }
     });
 </script>
-
 
 </body>
 </html>
