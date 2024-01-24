@@ -105,19 +105,32 @@
 }
 
 blockquote {
-	background: #f9f9f9;
-	border-left: 10px solid #ccc;
-	margin: 1.5em 10px;
-	padding: 0.5em 10px;
-}
-blockquote:before {
-	color: #ccc;
-	content: open-quote;
-	font-size: 4em;
-	line-height: 0.1em;
-	margin-right: 0.25em;
-	vertical-align: -0.4em;
-}
-blockquote p {
-	display: inline;
-}
+	font-family: 'Times New Roman', Times, serif; /* or any other font */
+	font-size: 24px; /* adjust as necessary */
+	font-style: italic;
+	margin: 0px auto; /* centers the blockquote and adds space around it */
+	max-width: 800px; /* maximum width of the quote block */
+	position: relative;
+	line-height: 1.5; /* adjust line height for better readability */
+  }
+  
+  blockquote:before {
+	content: "";
+	position: absolute;
+	left: -40px; /* adjust as necessary */
+	top: 0;
+	height: 100%;
+	border-left: 3px solid black; /* adjust as necessary */
+  }
+
+  .dots {
+    text-align: center;
+    font-size: 24px; /* Adjust size as needed */
+    line-height: 1.5; /* Adjust line height as needed */
+    padding: 20px 0; /* Adjust padding as needed for space above and below */
+  }
+  
+  .dots span {
+    margin: 0 20px; /* Adjust spacing between dots as needed */
+    display: inline-block;
+  }
