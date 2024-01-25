@@ -310,14 +310,3 @@ a {
     z-index: -1; /* Behind everything else */
 }
 
-.dots {
-    text-align: center;
-    font-size: 24px; /* Adjust size as needed */
-    line-height: 1.5; /* Adjust line height as needed */
-    padding: 20px 0; /* Adjust padding as needed for space above and below */
-  }
-  
-  .dots span {
-    margin: 0 20px; /* Adjust spacing between dots as needed */
-    display: inline-block;
-  }
