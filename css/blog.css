@@ -142,8 +142,8 @@ blockquote {
 	text-align: left; /* Aligns text to the left */
   }
   
-.indented-paragraph {
+.paragraph-container p {
     text-indent: 25px;
     font-family: Georgia, serif;
-    margin-bottom: 10px; /* Adds space between paragraphs, adjust as needed */
+    margin-bottom: 10px; /* Adds space between paragraphs */
 }
