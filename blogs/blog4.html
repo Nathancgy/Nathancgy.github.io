@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rethinking the Essence of Education</title>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Nathan,blog,博客,program,编程,life,essay,transcendentalism,romanticism,train,rant,philosophy,positive,nihilism">
+    <meta name="description" content="An essay about Alex reflecting his recent life's loss of balance. It delves into ideas of Romanticism, Transcendentalism, and Positive Nihilism, and how they are applicable to refinding harmony.">
+    <link rel="icon" href="/img/icon.jpg">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <meta name="Author" content="Nathan">
+
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/mobile-compatibility.js"></script>
+</head>
+<body>
+    <div class="navbar-menu">
+		<a class="logo" data-target="#nav-menu" title="HomePage: About Me" href="/index.html">
+			<span class="short-label"><b>H</b></span>
+			<span class="full-label"><b>Home</b></span>
+		</a>
+	
+		<a class="logo" data-target="#nav-menu" title="Project" href="/project.html">
+			<span class="short-label"><b>P</b></span>
+			<span class="full-label"><b>Project</b></span>
+		</a>
+	
+		<a class="logo active" data-target="#nav-menu" title="Blog" href="/blog.html">
+			<span class="short-label"><b>B</b></span>
+			<span class="full-label"><b>Blog</b></span>
+		</a>
+	
+		<a class="logo" data-target="#nav-menu" title="FAQ" href="/faq.html">
+			<span class="short-label"><b>F</b></span>
+			<span class="full-label"><b>FAQ</b></span>
+		</a>
+	</div>
+
+    <div class="wrapper">
+    
+        <div class="sidebar">
+            <div class="cover-img" style="background-image: url(/img/12.png)"></div>
+            <div class="bottom-block">
+                <h1>Nathan's Blog</h1>
+                <p> By Nathan</p>
+            </div>
+
+        </div>
+        
+        <div class="main">
+            <div class="page-title"> 
+                Personal Reflections
+            </div>
+
+            <div id="main-container" class="main-container">
+                <h1 style="font-size: 28px;line-height: 1.5;">
+                    Insomnia, Snoring, and Decision Tree
+                </h1>
+
+                <div style="font-size: 20px;display: inline-block;overflow: hidden;width: 100%;line-height: 1.5em;border-bottom: 1px dashed #D9D9D9;" class="paragraph-container">
+                        
+                        <blockquote>
+                            <p>Take a magnifying glass to the world. What kinds of things are you (possibly subconsciously) paying close attention to that many others aren't? Are there recurring patterns in the kinds of things you're noticing?</p>
+                        </blockquote>
+
+                        <p>As E. Joseph Cossman once said, 'The best bridge between despair and hope is a good night's sleep." In a personal twist, I'd say, 'The worst bridge between school and life is a bad night's sleep, or insomnia." Insomnia – a word that typically feels disconnected from the energetic world of teenagers – has been my constant companion since the day I stepped into boarding school.</p>
+
+                        <p>One night, as I was staring at the ceiling and wondering about life’s big questions as usual, I came across the question, “Why can’t I go to sleep?” To answer this, I lay flat and closed my eyes, trying not to think about anything. However, the more I tried to keep my mind blank, the more tension and thoughts emerged. I realized I must focus on one specific thing to fall asleep. But what should I focus on? Counting sheep? Then, an idea popped into my mind: my two dormmates' snoring sounds.</p>
+
+                        <p>The first thing I found is that they have identical snoring sounds, which are hard to distinguish. The primary difference was in their patterns, and as I tried to discern each one's pattern, I fell asleep. Thinking about one tiny thing, the snoring sound in my case, does help to fall asleep! Therefore, during the nights later that week, I found myself paying close attention to the patterns of my dormmates’ snoring sounds, and I became much more energetic the next day.</p>
+
+                        <p>But simply focusing on the patterns of their snoring sounds was unfulfilling to me; I'm the type of person who always wants to build connections from observations. Soon, I know what’s the next thing to do - I’ll try to remember the frequency of their snorings, each of them’s, and compare it with my breathing pace to categorize them into “fast”, “equivalent”, and “slow”. Then, I’ll recall my memories the next day and write both of their frequencies down on a table from my Notion. Simultaneously, I would note four other categorical variables for each of my dormmates from the previous day: sports (Y/N), snacks before bed (Y/N), air conditioner temperature (low: <20/medium: 20-24/high: >24), and amount of homework (many/little). Thus, the table resembled a dataset, with the four variables as independent and snoring frequency as the dependent variable. However, it's important to note that there could be (and likely were) confounding variables.</p>
+
+                        <p>By then, I was certain about my goal: to record the table's data daily and identify any correlations between the independent and dependent variables. There are already some clear recurring patterns that I found, such as one of my dormmate tend to snore slow if he did sports that day or ate snacks before bed. However, there are other patterns that are harder to discover. Luckily, I was learning about decision tree algorithms in Andrew Ng’s course that time. And so after a month of recording data, I decided to train a decision tree algorithm with the data to predict snoring frequencies of my two dormmates. The training proceeded well, as I employed the XGBoost algorithm to accommodate the limited data. With the trained model in hand, I ask my dormmates about those four variables each night before sleep, “did you kick football today?”. Then, I gave those variables to the model and it will predict if he will snore fast, equivalent, or slow tonight. I will compare the predicted result with the actual one that I observed the next morning, and guess what, the model achieved a 70% accuracy after ten days of comparison, which is definitely better than 33.33% accuracy if you guess the result!</p>
+
+                        <p>In the end, my struggle with not being able to sleep turned into a cool project. By paying attention to how my dormmates snore, I figured out a way to fall asleep faster. It taught me to be creative in finding solutions and to use what I learn in real life. Admittedly, this journey had its flaws, notably the somewhat arbitrary selection of the four independent variables and their direct leap to conclusions, which might not stand up to rigorous scientific scrutiny. Now, going to bed isn't scary anymore. I learned to deal with it, enjoy it, and make the best of it.</p>
+                        <p style="float: right; font-size: 20px; line-height: 1em; font-family: Georgia, serif, serif; color: #333; text-align: right; margin-top: 20px;">
+                            Nathan<br>
+                            2024.2.20
+                        </p>
+                        
+                </div>
+
+            </div>
+
+            </div>
+
+        </div>
+
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var navbarMenu = document.querySelector('.navbar-menu');
+
+        function setNavbarState(expanded) {
+            if (expanded) {
+                navbarMenu.classList.add('expanded');
+                sessionStorage.setItem('navbarExpanded', 'true');
+            } else {
+                navbarMenu.classList.remove('expanded');
+                sessionStorage.setItem('navbarExpanded', 'false');
+            }
+        }
+
+        navbarMenu.addEventListener('mouseenter', function() {
+            setNavbarState(true);
+        });
+
+        navbarMenu.addEventListener('mouseleave', function() {
+            setNavbarState(false);
+        });
+
+        var navbarLinks = navbarMenu.querySelectorAll('a');
+        navbarLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                setNavbarState(false);
+            });
+        });
+
+        // Initialize navbar state on page load
+        if (sessionStorage.getItem('navbarExpanded') === 'true') {
+            setNavbarState(true);
+        } else {
+            setNavbarState(false);
+        }
+    });
+</script>
+
+</body>
+</html>
