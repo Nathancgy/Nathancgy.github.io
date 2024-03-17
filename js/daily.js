@@ -18,7 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function populateMonthDropdown() {
         const monthDropdown = document.getElementById('filter-month-dropdown');
-        monthDropdown.innerHTML = `<a href="#" data-month="all">All</a>` + monthNames.map((month, index) => `<a href="#" data-month="${index + 1}">${month}</a>`).join('');
+
+        const uniqueMonths = Array.from(new Set(records.map(record => {
+            const month = parseInt(record.date.split('/')[1], 10);
+            return month - 1;
+        }))).sort();
+
+        const availableMonthNames = monthNames.filter((_, index) => uniqueMonths.includes(index));
+
+        monthDropdown.innerHTML = `<a href="#" data-month="all">All</a>` + availableMonthNames.map((month, index) => {
+            const monthNumber = uniqueMonths[index] + 1;
+            return `<a href="#" data-month="${monthNumber}">${month}</a>`;
+        }).join('');
     }
 
     document.getElementById('filter-year-dropdown').addEventListener('click', function(e) {
@@ -44,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addRecord('2024/03/17',"Read three amazingly good articles that explained the Transformer (I want to hand write it out sometimes this week)");
 
     /* ---------------------------------------- */
-    
+
     populateYearDropdown();
     populateMonthDropdown();
 
