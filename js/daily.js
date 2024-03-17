@@ -48,11 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // addRecord('', "")
     /* ---------------------------------------- */
 
-    addRecord('2024/03/15', 'Read about a great passage about word Embeddings. Opened a pull request that aded this passage to a GitHub project about LLM tutorials, and the author merged it within five minutes! This is the first time I became a contributor of a 10k+ star open source project.');
-    addRecord('2024/03/16', "Spent an entire day outdoor with other OpenTeens members. We've decided on a new project related with using OCR text extraction and LLM to detect rumors!");
-    addRecord('2024/03/17',"Read three amazingly good articles that explained the Transformer (I want to hand write it out sometimes this week)");
+    addRecord('2024/03/15', 'Read about a great passage about word Embeddings. <br> Opened a pull request that aded this passage to a GitHub project about LLM tutorials, and the author merged it within five minutes! This is the first time I became a contributor of a 10k+ star open source project.<br> <a href="https://github.com/Hannibal046/Awesome-LLM">Link</a>')
+    addRecord('2024/03/16', "Spent an entire day outdoor with other OpenTeens members.<br> We've decided on a new project related with using OCR text extraction and LLM to detect rumors. We're also considering on using some other embedding techniques to improve accuracy.")
+    addRecord('2024/03/17', "Read three amazingly good articles that explained the Transformer (I'm thinking of handwriting it out sometimes later this month)");
+    addRecord('2024/03/11', "Finished my Sparc camp interview... encountered a lot of unexpected weird problems.")
+    addRecord('2024/03/10', "Give off a presentation about OpenTeens in Chengdu in front of a 50+ crowd! A lot of new teenagers joined OpenTeens.")
+    addRecord('2024/03/13', "Finished Andrew Ng's Convolutional Neural Networks course week 2. <br>I'm thinking of handwriting out LeNet-5 and AlexNet sometimes this week.")
+    addRecord('2024/03/14', "Solved two Codeforces problems.<br> A stressed day of taking tests.")
+    addRecord('2024/03/12', "Read about a cool research paper that used 2D CNNs to detected sleep disorder using snoring sounds. <br>Sadly, I found no databases in replicating the code.")
 
     /* ---------------------------------------- */
 
