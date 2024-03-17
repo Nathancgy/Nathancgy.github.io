@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const records = [
-        { date: '2024/03/17', text: 'Read three amazingly good articles that explained the Transformer. Planning to handwrite notes this week.' },
-        { date: '2024/03/16', text: 'Spent an entire day outdoors with OpenTeens members. Decided on a new project using OCR text extraction and LLM to detect rumors.' },
-        { date: '2024/03/15', text: 'Read about word Embeddings. Contributed to a GitHub project on LLM tutorials, which was merged within five minutes!' },
-        // Add more records as needed
-    ];
+    const records = [];
     function addRecord(date, text) {
         records.push({ date, text });
         renderRecords();
@@ -42,8 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    addRecord('2022/05/18', 'Example of adding a new record.');
+    /* ---------------------------------------- */
 
+    addRecord('2024/03/15', 'Read about a great passage about word Embeddings. Opened a pull request that aded this passage to a GitHub project about LLM tutorials, and the author merged it within five minutes! This is the first time I became a contributor of a 10k+ star open source project.');
+    addRecord('2024/03/16', "Spent an entire day outdoor with other OpenTeens members. We've decided on a new project related with using OCR text extraction and LLM to detect rumors!");
+    addRecord('2024/03/17',"Read three amazingly good articles that explained the Transformer (I want to hand write it out sometimes this week)");
+
+    /* ---------------------------------------- */
+    
     populateYearDropdown();
     populateMonthDropdown();
 
