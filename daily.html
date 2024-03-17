@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Daily Records</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/icon.jpg">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="./css/daily.css">
+    <meta name="keywords" content="Nathan, daily, machine learning">
+    <meta name="description" content="Daily records about Nathan">
+    <meta name="Author" content="Nathan">
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/mobile-compatibility.js"></script>
+</head>
+<body>
+    <div class="navbar-menu">
+        <a class="logo" data-target="#nav-menu" title="HomePage: About Me" href="index.html">
+			<span class="short-label"><b>H</b></span>
+			<span class="full-label"><b>Home</b></span>
+		</a>
+	
+		<a class="logo" data-target="#nav-menu" title="Project" href="project.html">
+			<span class="short-label"><b>P</b></span>
+			<span class="full-label"><b>Project</b></span>
+		</a>
+	
+		<a class="logo" data-target="#nav-menu" title="Blog" href="blog.html">
+			<span class="short-label"><b>B</b></span>
+			<span class="full-label"><b>Blog</b></span>
+		</a>
+	
+		<a class="logo" data-target="#nav-menu" title="FAQ" href="faq.html">
+			<span class="short-label"><b>F</b></span>
+			<span class="full-label"><b>FAQ</b></span>
+		</a>
+        <a class="logo active" href="daily.html"><span class="short-label"><b>D</b></span><span class="full-label"><b>Daily</b></span></a>
+    </div>
+    <div class="sidebar">
+        <div class="cover-img" style="background-image: url(/img/qq.png)"></div>
+        <div class="bottom-block">
+            <h1>Daily Records</h1>
+            <p> By Nathan</p>
+        </div>
+
+    </div>
+    <div class="main">
+        <div class="page-title">
+            Daily
+        </div>
+        <div class="title">
+            <h3 style="text-align: center;">Daily records of my journey</h3>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Filter by Date <span class="arrow">&#9660;</span></button>
+            <div class="dropdown-content" id="filter-dropdown"></div>
+        </div>
+        <div id="daily"></div>
+    </div>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const records = [
+                { date: '2024/03/17', text: 'Read three amazingly good articles that explained the Transformer. Planning to handwrite notes this week.' },
+                { date: '2024/03/16', text: 'Spent an entire day outdoors with OpenTeens members. Decided on a new project using OCR text extraction and LLM to detect rumors.' },
+                { date: '2024/03/15', text: 'Read about word Embeddings. Contributed to a GitHub project on LLM tutorials, which was merged within five minutes!' },
+                // Add more records as needed
+            ];
+            function addRecord(date, text) {
+                records.push({ date, text });
+                renderRecords();
+            }
+
+            function renderRecords(filterDate = null) {
+                const sortedRecords = records.sort((a, b) => new Date(b.date) - new Date(a.date));
+                const filteredRecords = filterDate && filterDate !== 'all' ? sortedRecords.filter(record => record.date.includes(filterDate)) : sortedRecords;
+                const dailyElement = document.getElementById('daily');
+                dailyElement.innerHTML = '';
+
+                // Group records by year
+                const recordsByYear = filteredRecords.reduce((acc, record) => {
+                    const year = record.date.split('/')[0]; // Get year from record
+                    if (!acc[year]) {
+                        acc[year] = [];
+                    }
+                    acc[year].push(record);
+                    return acc;
+                }, {});
+
+                // Sort years in descending order
+                const sortedYears = Object.keys(recordsByYear).sort((a, b) => b - a);
+
+                sortedYears.forEach(year => {
+                    // Create a year title element
+                    const yearTitleElement = document.createElement('h2');
+                    yearTitleElement.textContent = year;
+                    dailyElement.appendChild(yearTitleElement);
+
+                    // Append records for this year
+                    recordsByYear[year].forEach(record => {
+                        const recordElement = document.createElement('div');
+                        recordElement.className = 'record';
+                        recordElement.innerHTML = `
+                            <div class="record-date">${record.date.substring(5)}</div> <!-- Remove year from display -->
+                            <div class="record-text">${record.text}</div>
+                        `;
+                        dailyElement.appendChild(recordElement);
+                    });
+                });
+            }
+
+            function updateFilterButton() {
+                const dates = records.map(record => record.date);
+                const uniqueDates = Array.from(new Set(dates)).sort((a, b) => new Date(b) - new Date(a));
+                const dropdownContentElement = document.getElementById('filter-dropdown');
+                dropdownContentElement.innerHTML = `<a href="#" data-date="all">All</a><a href="#" data-date="2024">2024</a>`; // Add 'All' and '2024' options
+                uniqueDates.forEach(date => {
+                    dropdownContentElement.innerHTML += `<a href="#" data-date="${date}">${date.substring(5)}</a>`; // Use substring to remove year from display
+                });
+            }
+            // New event listener for handling clicks on the dropdown
+            document.querySelector('.dropdown').addEventListener('click', function(e) {
+                const target = e.target; // The clicked element
+                if (target.tagName === 'A') { // Ensure the clicked element is a link
+                    const selectedDate = target.getAttribute('data-date');
+                    filterRecords(selectedDate);
+                }
+            });
+
+            window.filterRecords = function(date) {
+                renderRecords(date === 'all' ? null : date); 
+            };
+
+            addRecord('2023/03/18', 'Example of adding a new record.');
+            updateFilterButton();
+            renderRecords();
+        });
+
+    </script>
+</body>
+</html>
