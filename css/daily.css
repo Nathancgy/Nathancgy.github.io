@@ -1,6 +1,5 @@
-/* Daily records styling */
 .main {
-    padding-left: 20px; /* Adjust this value as needed */
+    padding-left: 20px; 
 }
 .record {
     margin-left: 20px;
@@ -23,18 +22,17 @@
     color: #666;
 }
 
-/* Style the drop button */
 .dropbtn {
     background-color: #3a5890;
     color: white;
-    padding: 10px 16px; /* Adjusted padding for a less boxy appearance */
+    padding: 10px 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    border-radius: 20px; /* Rounded edges */
-    display: inline-flex; /* Align text and arrow icon */
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Distribute space between text and arrow */
+    border-radius: 20px; 
+    display: inline-flex; 
+    align-items: center;
+    justify-content: space-between;
 }
 
 .dropdown {
@@ -44,10 +42,9 @@
 }
 .arrow {
     display: inline-block;
-    transition: transform 0.3s ease; /* Smooth transition for rotation */
+    transition: transform 0.3s ease; 
 }
 
-/* Rotate arrow on hover */
 .dropdown:hover .arrow {
     transform: rotate(180deg);
 }
@@ -61,7 +58,7 @@
     z-index: 1;
     right: 0;
     border-radius: 5px;
-    top: 100%; /* Position the dropdown content right below the dropdown button */
+    top: 100%;
 }
 
 .dropdown-content a {
