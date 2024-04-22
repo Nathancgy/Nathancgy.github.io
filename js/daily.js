@@ -59,6 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
     addRecord('2024/03/13', "Finished Andrew Ng's Convolutional Neural Networks course week 2. <br>I'm thinking of handwriting out LeNet-5 and AlexNet sometimes this week.")
     addRecord('2024/03/14', "Solved two Codeforces problems.<br> A stressed day of taking tests.")
     addRecord('2024/03/12', "Read about a cool research paper that used 2D CNNs to detected sleep disorder using snoring sounds. <br>Sadly, I found no databases in replicating the code.")
+    addRecord('2024/03/18', "Handwrote a feedforward neural network and learned some basics about PyTorch. Also finished the 2.1 Data Manipulation section of 'Dive into Deep Learning'.")
+    addRecord('2024/03/19', "Participated in a div 3 Codeforces contest for 90 min during Statistics class lol. (luckily) ranked a relatively high number.")
+    addRecord('2024/03/20', "Learned about Long Short-Term Memory models and finished the 2.2 section of 'Dive into Deep Learning'.")
 
     /* ---------------------------------------- */
 
