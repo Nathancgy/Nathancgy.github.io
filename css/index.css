@@ -74,7 +74,7 @@ body {
 
 @media (hover: hover) and (pointer: fine) {
     .navbar-menu:hover {
-        width: 100px; 
+        width: 120px; 
     }
   
     .navbar-menu:hover .full-label {
